@@ -7,7 +7,6 @@ const int rightIn2 = 5;
 const int timeDelay = 1000;
 
 void setup(){
-  
   pinMode(leftIn1 , OUTPUT);
   pinMode(leftIn2 , OUTPUT);
   pinMode(rightIn1 , OUTPUT);
@@ -65,7 +64,7 @@ void loop(){
  
  leftF();
  delay(timeDelay);
- stopAll();
+ stopAll();  //briefly stopping the motor before changing directions
  delay(100);
 
  leftB();
@@ -94,5 +93,4 @@ void loop(){
 
  stopAll();
  delay(timeDelay);
-
 }
