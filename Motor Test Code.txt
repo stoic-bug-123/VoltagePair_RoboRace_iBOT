@@ -1,0 +1,98 @@
+Motor Test Code
+
+const int leftIn1 = 2;
+const int leftIn2 = 3;
+const int rightIn1 = 4;
+const int rightIn2 = 5;
+const int timeDelay = 1000;
+
+void setup(){
+  
+  pinMode(leftIn1 , OUTPUT);
+  pinMode(leftIn2 , OUTPUT);
+  pinMode(rightIn1 , OUTPUT);
+  pinMode(rightIn2 , OUTPUT);
+}
+
+void leftF(){
+ digitalWrite(leftIn1, HIGH);
+ digitalWrite(leftIn2 , LOW);
+}
+
+void leftB(){
+ digitalWrite(leftIn1, LOW);
+ digitalWrite(leftIn2 , HIGH);
+}
+
+void rightF(){
+ digitalWrite(rightIn1, HIGH);
+ digitalWrite(rightIn2 , LOW);
+}
+
+void rightB(){
+ digitalWrite(rightIn1, LOW);
+ digitalWrite(rightIn2 , HIGH);
+}
+
+void forward(){
+  leftF();
+  rightF();
+}
+
+void backward(){
+  leftB();
+  rightB();
+}
+
+void leftS(){
+  digitalWrite(leftIn1, LOW);
+  digitalWrite(leftIn2 , LOW);
+}
+
+void rightS(){
+  digitalWrite(rightIn1, LOW);
+  digitalWrite(rightIn2 , LOW);
+}
+
+void stopAll(){
+  leftS();
+  rightS();
+}
+
+void loop(){
+ 
+ delay(timeDelay);
+ 
+ leftF();
+ delay(timeDelay);
+ stopAll();
+ delay(100);
+
+ leftB();
+ delay(timeDelay);
+
+ leftS();
+ delay(timeDelay);
+
+ rightF();
+ delay(timeDelay);
+ stopAll();
+ delay(100);
+
+ rightB();
+ delay(timeDelay);
+
+ rightS();
+ delay(timeDelay);
+
+ forward();
+ delay(timeDelay);
+ stopAll();
+ delay(100);
+ backward();
+ delay(timeDelay);
+
+ stopAll();
+ delay(timeDelay);
+
+}
